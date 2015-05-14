@@ -1,6 +1,6 @@
 {
-    "mock_id": 1234,
-    "url": "/mocks/1234",
+    "mock_id": 111,
+    "url": "/mocks/111",
     "questions_count": 5,
     "answers_count": 20,
     "answers_correct_count": 10,

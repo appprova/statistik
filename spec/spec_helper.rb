@@ -27,5 +27,10 @@ def api_method_url(method)
   ROOT_URL + method
 end
 
-register(:url => 'mocks/1234', :body => 'mocks_by_id')
-register(:url => 'mocks/1234?school_id=123', :body => 'mocks_by_id_with_comparison')
+register(:url => 'mocks/111', :body => 'mocks_by_id')
+register(:url => 'mocks/111?school_id=222', :body => 'mocks_by_id_with_comparison')
+register(:url => 'mocks/111/users/333', :body => 'users_by_id')
+register(:url => 'mocks/111/questions/444', :body => 'questions_by_id')
+register(:url => 'mocks/111/questions/444?school_id=222', :body => 'questions_by_id_with_comparison')
+register(:url => 'mocks/111/alternatives/555', :body => 'alternatives_by_id')
+register(:url => 'mocks/111/alternatives/555?school_id=222', :body => 'alternatives_by_id_with_comparison')
