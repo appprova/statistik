@@ -11,7 +11,8 @@ include Statistik
 Statistik::Client.config 
 
 FIXTURES_PATH = File.expand_path(File.join(File.dirname(__FILE__), 'fixtures'))
-ROOT_URL = [Statistik.config.url.chomp('/'), Statistik::Client::API_VERSION].join '/'
+ROOT_URL = [Statistik.config.url.chomp('/'), Statistik.config.version].join '/'
+
 FakeWeb.allow_net_connect = false
 
 def register(options)
@@ -24,7 +25,7 @@ def read_fixture(fixture)
 end
 
 def api_method_url(method)
-  ROOT_URL + method
+  ROOT_URL + '/' + method
 end
 
 register(url: 'mocks/111', body: 'mocks_by_id')

@@ -23,11 +23,10 @@ module Statistik
 
   config_accessor :end_point
 
-  self.config.url ||= "https://statistics.appprova.com.br"
+  self.config.url     ||= "https://statistics.appprova.com.br"
+  self.config.version ||= "1.0"
   
   class Client
-    API_VERSION = ''
-    
     attr_reader :url
     attr_reader :api_version
 
@@ -47,7 +46,7 @@ module Statistik
 
     def initialize(options = OpenStruct.new)
       @url = normalize(options.url || Statistik.config.url)
-      @api_version = options.api_version || API_VERSION
+      @api_version = options.api_version || Statistik.config.version
     end
 
     def root_path
