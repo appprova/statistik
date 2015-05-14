@@ -1,6 +1,6 @@
 # Statistik
 
-TODO: Write a gem description
+A ruby wrapper to AppProva Statistics API: http://docs.appprovastatistics.apiary.io/
 
 ## Installation
 
@@ -18,12 +18,38 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Get Mock Statistics
 
-## Contributing
+Get Mock Statistics identified by it ids.
 
-1. Fork it ( https://github.com/[my-github-username]/statistik/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+    Statistik::Mock.find(111)
+
+To get the Mock Statistics from a determinated school and its comparison
+
+    Statistik::Mock.find(111, query: {school_id: 222})
+
+### Get Mock User Statistics 
+
+Get Mock Statistics from a specific User
+
+    Statistik::MockUser.find(111, 333)
+
+### Get Mock Question Statistics
+
+Get Question statistic of a determinated Mock
+
+    Statistik::MockQuestion.find(111, 444)
+
+To get the Mock Question Statistics from a determinated school and its comparison
+
+    Statistik::MockQuestion.find(111, 444, query: {school_id: 222})
+
+### Get Mock Alternative Statistics 
+
+Get Alternative statistics of a determinated Mock
+
+    Statistik::MockQuestion.find(111, 555)
+
+To get the Mock Alternative Statistics from a determinated school and its comparison
+
+    Statistik::MockQuestion.find(111, 555, query: {school_id: 222})
