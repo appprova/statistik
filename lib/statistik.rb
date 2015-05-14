@@ -4,6 +4,7 @@ $LOAD_PATH.unshift(path) unless $LOAD_PATH.include?(path)
 require "json"
 require "httparty"
 require "active_support/inflector"
+require 'active_support/configurable'
 require "string"
 
 require "statistik/version"
@@ -18,9 +19,13 @@ require "statistik/mock_user"
 
 module Statistik
   include HTTParty
+  include ActiveSupport::Configurable
+
+  config_accessor :end_point
+
+  self.config.url ||= "https://statistics.appprova.com.br"
   
   class Client
-    URL = 'http://private-87257-appprovastatistics.apiary-mock.com'
     API_VERSION = ''
     
     attr_reader :url
@@ -41,7 +46,7 @@ module Statistik
     end
 
     def initialize(options = OpenStruct.new)
-      @url = normalize(options.url || URL)
+      @url = normalize(options.url || Statistik.config.url)
       @api_version = options.api_version || API_VERSION
     end
 

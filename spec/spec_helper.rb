@@ -11,7 +11,7 @@ include Statistik
 Statistik::Client.config 
 
 FIXTURES_PATH = File.expand_path(File.join(File.dirname(__FILE__), 'fixtures'))
-ROOT_URL = [Statistik::Client::URL.chomp('/'), Statistik::Client::API_VERSION].join '/'
+ROOT_URL = [Statistik.config.url.chomp('/'), Statistik::Client::API_VERSION].join '/'
 FakeWeb.allow_net_connect = false
 
 def register(options)
