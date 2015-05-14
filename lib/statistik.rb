@@ -3,20 +3,25 @@ $LOAD_PATH.unshift(path) unless $LOAD_PATH.include?(path)
 
 require "json"
 require "httparty"
+require "active_support/inflector"
+require "string"
 
 require "statistik/version"
+require "statistik/base"
 require "statistik/mock"
-require "statistik/mock_user"
-require "statistik/mock_question"
 require "statistik/mock_alternative"
+require "statistik/mock_comparison"
+require "statistik/mock_question"
+require "statistik/mock_school"
+require "statistik/mock_user"
 
 
 module Statistik
   include HTTParty
   
   class Client
-    URL = 'http://private-87257-appprovastatistics.apiary-mock.com/'
-    API_VERSION = '1.0'
+    URL = 'http://private-87257-appprovastatistics.apiary-mock.com'
+    API_VERSION = ''
     
     attr_reader :url
     attr_reader :api_version
@@ -44,12 +49,22 @@ module Statistik
       normalize(url + api_version)
     end
 
-    def api_method_url(path, options = {})
-      root_path + normalize(path) + query_string(options)
+    def api_method_path(pattern, options = {})
+      pattern.scan(/:(\w+)/).each do |part|
+        val = part.first
+        pattern.sub!(":" + val, options[val.to_sym].to_s)
+      end
+
+      pattern
+    end
+
+    def api_method_url(method, options = {})
+      root_path + api_method_path(method, options) + query_string(options)
     end
 
     def get(url)
-      JSON.parse(open(url))
+      response = HTTParty.get url
+      JSON.parse response.body
     end
 
     def request(path, options)
@@ -64,7 +79,7 @@ module Statistik
         params = params.sort_by{ |k,v| k.to_s }
         pairs = params.map{ |k,v| "#{k}=#{v}" }
 
-        '?' + pairsx.join('&')
+        '?' + pairs.join('&')
       end
 
       def normalize(url)
