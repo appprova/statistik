@@ -15,8 +15,10 @@ module Statistik
     relationship :school
 
     class << self
-      def find(id, options = {})
-        request('mocks/:id', id, options)
+      def find(mock_id, options = {})
+        request 'mocks/:mock_id', 
+                {mock_id: mock_id}, 
+                options
       end
     end
   end
