@@ -21,8 +21,8 @@ Or install it yourself as:
 To use Statistics gem you will need to configure the URL to Statistics API:
 
     Statistik.config do |config|
-      config.api_url     = 'http://statistics.enem.appprova.com.br'
-      config.api_version = 'v1'
+      config.url     = 'http://statistics.enem.appprova.com.br'
+      config.version = '1.0'
     end
 
 ### Get Mock Statistics
