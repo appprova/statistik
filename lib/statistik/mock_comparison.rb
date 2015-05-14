@@ -3,6 +3,7 @@ module Statistik
     setup_delegators :@struct, :answers_count,
                                :answers_correct_count,
                                :answers_correct_rate,
-                               :users_count
+                               :users_count,
+                               :questions_count
   end
 end
