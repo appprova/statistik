@@ -1,0 +1,22 @@
+{
+    "mock_id": 1234,
+    "url": "/mocks/1234",
+    "questions_count": 5,
+    "answers_count": 20,
+    "answers_correct_count": 10,
+    "answers_correct_rate": 0.5,
+    "users_count": 4,
+    "school": {
+        "school_id": 123,
+        "answers_count": 2,
+        "answers_correct_count": 2,
+        "answers_correct_rate": 1,
+        "users_count": 1
+    },
+    "comparison": {
+        "answers_count": 3,
+        "answers_correct_count": 3,
+        "answers_correct_rate": 1,
+        "users_count": 1
+    }
+}
