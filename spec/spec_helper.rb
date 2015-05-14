@@ -16,7 +16,7 @@ FakeWeb.allow_net_connect = false
 
 def register(options)
   url = api_method_url(options[:url])
-  FakeWeb.register_uri(:get, url, :body => read_fixture(options[:body] + '.json'))
+  FakeWeb.register_uri(:get, url, body: read_fixture(options[:body] + '.json'))
 end
 
 def read_fixture(fixture)
@@ -27,10 +27,10 @@ def api_method_url(method)
   ROOT_URL + method
 end
 
-register(:url => 'mocks/111', :body => 'mocks_by_id')
-register(:url => 'mocks/111?school_id=222', :body => 'mocks_by_id_with_comparison')
-register(:url => 'mocks/111/users/333', :body => 'users_by_id')
-register(:url => 'mocks/111/questions/444', :body => 'questions_by_id')
-register(:url => 'mocks/111/questions/444?school_id=222', :body => 'questions_by_id_with_comparison')
-register(:url => 'mocks/111/alternatives/555', :body => 'alternatives_by_id')
-register(:url => 'mocks/111/alternatives/555?school_id=222', :body => 'alternatives_by_id_with_comparison')
+register(url: 'mocks/111', body: 'mocks_by_id')
+register(url: 'mocks/111?school_id=222', body: 'mocks_by_id_with_comparison')
+register(url: 'mocks/111/users/333', body: 'users_by_id')
+register(url: 'mocks/111/questions/444', body: 'questions_by_id')
+register(url: 'mocks/111/questions/444?school_id=222', body: 'questions_by_id_with_comparison')
+register(url: 'mocks/111/alternatives/555', body: 'alternatives_by_id')
+register(url: 'mocks/111/alternatives/555?school_id=222', body: 'alternatives_by_id_with_comparison')

@@ -1,0 +1,12 @@
+{
+    "user_id": 333,
+    "answers_count": 5,
+    "answers_correct_count": 4,
+    "answers_correct_rate": 1,
+    "answers_comparison_rate": 0.75,
+    "comparison": {
+        "questions_count": 12,
+        "answers_correct_count": 8,
+        "answers_correct_rate": 0.66
+    }
+}

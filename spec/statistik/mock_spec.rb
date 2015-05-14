@@ -15,7 +15,7 @@ describe Statistik::Mock do
     expect(mock.school).to be_nil
   end
 
-  it 'should include comparison and school using param :school_id => 222' do
+  it 'should include comparison and school using param school_id: 222' do
     mock = Statistik::Mock.find 111, query: {school_id: 222}
     
     expect(mock.comparison).to be_instance_of Statistik::MockComparison
