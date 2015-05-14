@@ -18,7 +18,8 @@ Or install it yourself as:
 
 ## Usage
 
-To use Statistics gem you will need to configure the URL to Statistics API:
+To use Statistics gem you can configure the URL and Version to Statistics API.
+Create a initializer file named `config/initializers/statistik.rb` and add the following code:
 
     Statistik.config do |config|
       config.url     = 'http://statistics.enem.appprova.com.br'
