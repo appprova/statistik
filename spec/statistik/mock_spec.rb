@@ -3,32 +3,34 @@ require 'spec_helper'
 describe Statistik::Mock do  
   it 'should return a mock statistic identified by its id (without school)' do
     mock = Statistik::Mock.find 1234
-    mock.mock_id.should == 1234
-    mock.questions_count.should == 5
-    mock.answers_count.should == 20
-    mock.answers_correct_count.should == 10
-    mock.answers_correct_rate.should == 0.5
-    mock.users_count.should == 4
 
-    mock.comparison.should be_nil
-    mock.school.should be_nil
+    expect(mock.mock_id).to eql(value)
+    expect(mock.mock_id).to eql(1234)
+    expect(mock.questions_count).to eql(5)
+    expect(mock.answers_count).to eql(20)
+    expect(mock.answers_correct_count).to eql(10)
+    expect(mock.answers_correct_rate).to eql(0.5)
+    expect(mock.users_count).to eql(4)
+
+    expect(mock.comparison).to be_nil
+    expect(mock.school).to be_nil
   end
 
   it 'should include comparison and school using param :school_id => 123' do
     mock = Statistik::Mock.find 1234, query: {school_id: 123}
     
-    mock.comparison.should be_instance_of Statistik::MockComparison
-    mock.school.should be_instance_of Statistik::MockSchool
+    expect(mock.comparison).to be_instance_of Statistik::MockComparison
+    expect(mock.school).to be_instance_of Statistik::MockSchool
 
-    mock.comparison.answers_count.should == 3
-    mock.comparison.answers_correct_count.should == 3
-    mock.comparison.answers_correct_rate.should == 1
-    mock.comparison.users_count.should == 1
+    expect(mock.comparison.answers_count).to eql(3)
+    expect(mock.comparison.answers_correct_count).to eql(3)
+    expect(mock.comparison.answers_correct_rate).to eql(1)
+    expect(mock.comparison.users_count).to eql(1)
     
-    mock.school.school_id.should == 123
-    mock.school.answers_count.should == 2
-    mock.school.answers_correct_count.should == 2
-    mock.school.answers_correct_rate.should == 1
-    mock.school.users_count.should == 1
+    expect(mock.school.school_id).to eql(123)
+    expect(mock.school.answers_count).to eql(2)
+    expect(mock.school.answers_correct_count).to eql(2)
+    expect(mock.school.answers_correct_rate).to eql(1)
+    expect(mock.school.users_count).to eql(1)
   end
 end
