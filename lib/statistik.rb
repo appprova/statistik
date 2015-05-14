@@ -49,17 +49,17 @@ module Statistik
       normalize(url + api_version)
     end
 
-    def api_method_path(pattern, options = {})
+    def api_method_path(pattern, params, options = {})
       pattern.scan(/:(\w+)/).each do |part|
         val = part.first
-        pattern.sub!(":" + val, options[val.to_sym].to_s)
+        pattern.sub!(":" + val, params[val.to_sym].to_s)
       end
 
       pattern
     end
 
-    def api_method_url(method, options = {})
-      root_path + api_method_path(method, options) + query_string(options)
+    def api_method_url(method, params, options = {})
+      root_path + api_method_path(method, params, options) + query_string(options)
     end
 
     def get(url)
@@ -67,8 +67,8 @@ module Statistik
       JSON.parse response.body
     end
 
-    def request(path, options)
-      get api_method_url(path, options)
+    def request(path, params, options)
+      get api_method_url(path, params, options)
     end
 
     private

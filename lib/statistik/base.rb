@@ -34,9 +34,8 @@ module Statistik
         @@relationships[relationship] = klass
       end
 
-      def request(path_pattern, id, options)
-        options.merge! id: id if id
-        parse_with_class client.request(path_pattern, options)
+      def request(path_pattern, params, options)
+        parse_with_class client.request(path_pattern, params, options)
       end
     end
 
