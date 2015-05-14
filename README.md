@@ -6,7 +6,7 @@ A ruby wrapper to AppProva Statistics API: http://docs.appprovastatistics.apiary
 
 Add this line to your application's Gemfile:
 
-    gem 'statistik'
+    gem 'statistik', source: 'https://tEc22xsAZEVZqYgY3xDz@repo.fury.io/appprova/'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install statistik
+    $ gem install statistik --source https://tEc22xsAZEVZqYgY3xDz@repo.fury.io/appprova/
 
 ## Usage
 
