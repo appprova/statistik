@@ -1,5 +1,7 @@
 # Statistik
 
+[ ![Codeship Status for appprova/statistik](https://codeship.com/projects/2d781cb0-dd7d-0132-f4e0-5604aedd125f/status?branch=master)](https://codeship.com/projects/80281)
+
 A ruby wrapper to AppProva Statistics API: http://docs.appprovastatistics.apiary.io/
 
 ## Installation
