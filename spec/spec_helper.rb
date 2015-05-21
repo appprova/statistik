@@ -8,7 +8,11 @@ require 'rspec'
 require 'pp'
 
 include Statistik
-Statistik::Client.config 
+
+Statistik.config do |config|
+  config.url     = 'http://statistics.appprova.com.br'
+  config.version = 'v1'
+end
 
 FIXTURES_PATH = File.expand_path(File.join(File.dirname(__FILE__), 'fixtures'))
 ROOT_URL = [Statistik.config.url.chomp('/'), Statistik.config.version].join '/'

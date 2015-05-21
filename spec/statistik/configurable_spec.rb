@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe 'Statistik.config' do
   it "should be accessed from class" do
-    expect(Statistik.config.url).to eq('https://statistics.appprova.com.br')
-    expect(Statistik.config.version).to eq('1.0')
+    expect(Statistik.config).to respond_to :url
+    expect(Statistik.config).to respond_to :version
   end
 
   it "should change Statistik URL" do
@@ -28,5 +28,16 @@ describe 'Statistik.config' do
     end
 
     expect(Statistik.config.version).to eq('3.0')
+  end
+
+  it "should back to normal configuration" do
+    Statistik.configure do |config|
+      config.url     = 'http://statistics.appprova.com.br'
+      config.version = 'v1'
+    end
+
+    expect(Statistik.config.url).to eq('http://statistics.appprova.com.br')
+    expect(Statistik.config.version).to eq('v1')
+
   end
 end

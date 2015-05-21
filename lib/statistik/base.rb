@@ -14,7 +14,7 @@ module Statistik
       end
 
       def client
-        Statistik::Client.instance
+        @client ||= Statistik::Client.new
       end
 
       def parse_with_class(hash)

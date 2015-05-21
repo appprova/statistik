@@ -23,26 +23,12 @@ module Statistik
 
   config_accessor :end_point
 
-  self.config.url     ||= "https://statistics.appprova.com.br"
-  self.config.version ||= "1.0"
+  self.config.url     ||= "http://statistics.appprova.com.br"
+  self.config.version ||= "v1"
   
   class Client
     attr_reader :url
     attr_reader :api_version
-
-    class << self
-
-      def config(&block)
-        options = OpenStruct.new
-        yield options if block_given?
-        @client = Client.new(options)
-      end
-
-      def instance
-        @client
-      end
-
-    end
 
     def initialize(options = OpenStruct.new)
       @url = normalize(options.url || Statistik.config.url)
