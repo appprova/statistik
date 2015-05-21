@@ -31,7 +31,7 @@ module Statistik
 
       def relationship(relationship)
         klass = "mock_#{relationship.to_s}".camelize
-        @@relationships[relationship] = klass
+        @@relationships[relationship] = "Statistik::#{klass}"
       end
 
       def request(path_pattern, params, options)
