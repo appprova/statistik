@@ -4,8 +4,8 @@ module Statistik
     setup_delegators :@struct, :mock_id,
                                :alternative_id,
                                :answers_count,
-                               :answers_correct_count,
-                               :answers_correct_rate,
+                               :question_answers_count,
+                               :question_answers_rate,
                                :comparison,
                                :school
 

@@ -2,17 +2,17 @@
     "mock_id": 111,
     "alternative_id": 1,
     "answers_count": 5,
-    "answers_correct_count": 5,
-    "answers_correct_rate": 1,
+    "question_answers_count": 5,
+    "question_answers_rate": 1,
     "school": {
         "school_id": 222,
         "answers_count": 2,
-        "answers_correct_count": 2,
-        "answers_correct_rate": 1
+        "question_answers_count": 2,
+        "question_answers_rate": 1
     },   
     "comparison": {
         "answers_count": 3,
-        "answers_correct_count": 3,
-        "answers_correct_rate": 1
+        "question_answers_count": 3,
+        "question_answers_rate": 1
     }
 }
