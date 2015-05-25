@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Statistik::MockUser do  
   it "should return a MockUser statistic identified by mock and user ids" do
+    register(url: 'mocks/111/users/333', body: 'users_by_id')
+    
     mock_user = Statistik::MockUser.find 111, 333
 
     expect(mock_user.mock_id).to eq(111)

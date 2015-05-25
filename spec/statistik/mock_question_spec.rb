@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Statistik::MockQuestion do
   it "should return a MockQuestion statistic identified by its id (without comparison)" do
+    register(url: 'mocks/111/questions/444', body: 'questions_by_id')
+
     mock_question = Statistik::MockQuestion.find 111, 444
 
     expect(mock_question).to be_instance_of Statistik::MockQuestion
@@ -17,6 +19,8 @@ describe Statistik::MockQuestion do
   end
 
   it "should include comparison and school using param school_id: 222" do
+    register(url: 'mocks/111/questions/444?school_id=222', body: 'questions_by_id_with_comparison')
+    
     mock_question = Statistik::MockQuestion.find 111, 444, query: {school_id: 222}
 
     expect(mock_question.comparison).to be_instance_of Statistik::MockComparison

@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Statistik::MockAlternative do  
   it "should return a MockAlternative statistic identified by its id (without comparison)" do
+    register(url: 'mocks/111/alternatives/555', body: 'alternatives_by_id')
+
     mock_alternative = Statistik::MockAlternative.find 111, 555
 
     expect(mock_alternative).to be_instance_of Statistik::MockAlternative
@@ -17,6 +19,8 @@ describe Statistik::MockAlternative do
   end
 
   it "should include comparison and school using param school_id: 222" do
+    register(url: 'mocks/111/alternatives/555?school_id=222', body: 'alternatives_by_id_with_comparison')
+    
     mock_alternative = Statistik::MockAlternative.find 111, 555, query: {school_id: 222}
 
     expect(mock_alternative.comparison).to be_instance_of Statistik::MockComparison
