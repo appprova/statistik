@@ -53,12 +53,16 @@ module Statistik
     end
 
     def get(url)
-      response = HTTParty.get url
-      JSON.parse response.body
+      JSON.parse HTTParty.get(url).body
+    end
+
+    def put(url)
+      JSON.parse HTTParty.put(url).body
     end
 
     def request(path, params, options)
-      get api_method_url(path, params, options)
+      options = {method: :get}.merge(options)
+      send options[:method], api_method_url(path, params, options)
     end
 
     private
