@@ -9,6 +9,7 @@ describe Statistik::MockUser do
     expect(mock_user.mock_id).to eq(111)
     expect(mock_user.user_id).to eq(333)
     expect(mock_user.answers_count).to eq(5)
+    expect(mock_user.questions_count).to eq(5)
     expect(mock_user.answers_correct_count).to eq(4)
     expect(mock_user.answers_correct_rate).to eq(1)
     expect(mock_user.answers_comparison_rate).to eq(0.75)

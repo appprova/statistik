@@ -5,6 +5,7 @@
     "answers_correct_count": 4,
     "answers_correct_rate": 1,
     "answers_comparison_rate": 0.75,
+    "questions_count": 5,
     "comparison": {
         "questions_count": 12,
         "answers_correct_count": 8,

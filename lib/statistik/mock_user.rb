@@ -3,6 +3,7 @@ module Statistik
 
     setup_delegators :@struct, :user_id,
                                :mock_id,
+                               :questions_count,
                                :answers_count,
                                :answers_correct_count,
                                :answers_correct_rate,
