@@ -7,6 +7,6 @@ module Statistik
                                :question_answers_count,
                                :question_answers_rate,
                                :users_count,
-                               :distractor_rate
+                               :alternative_color
   end
 end
