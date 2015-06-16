@@ -6,6 +6,7 @@ module Statistik
                                :answers_correct_rate,
                                :question_answers_count,
                                :question_answers_rate,
-                               :users_count
+                               :users_count,
+                               :distractor_rate
   end
 end

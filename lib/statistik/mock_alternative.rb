@@ -6,6 +6,7 @@ module Statistik
                                :answers_count,
                                :question_answers_count,
                                :question_answers_rate,
+                               :distractor_rate,
                                :comparison,
                                :school
 
