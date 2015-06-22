@@ -4,11 +4,13 @@
     "answers_count": 5,
     "question_answers_count": 5,
     "question_answers_rate": 1,
+    "alternative_color": "red",
     "school": {
         "school_id": 222,
         "answers_count": 2,
         "question_answers_count": 2,
-        "question_answers_rate": 1
+        "question_answers_rate": 1,
+        "alternative_color": "red"
     },   
     "comparison": {
         "answers_count": 3,
