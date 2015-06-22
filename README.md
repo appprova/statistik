@@ -8,7 +8,7 @@ A ruby wrapper to AppProva Statistics API: http://docs.appprovastatistics.apiary
 
 Add this line to your application's Gemfile:
 
-    gem 'statistik', source: 'https://tEc22xsAZEVZqYgY3xDz@repo.fury.io/appprova/'
+    gem 'statistik', '~> 0.1.0', git: 'git@bitbucket.org:appprova/statistik.git'
 
 And then execute:
 
