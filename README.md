@@ -14,10 +14,6 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install statistik --source https://tEc22xsAZEVZqYgY3xDz@repo.fury.io/appprova/
-
 ## Usage
 
 To use Statistics gem you can configure the URL and Version to Statistics API.
