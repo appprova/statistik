@@ -3,5 +3,6 @@
     "alternative_id": 555,
     "answers_count": 5,
     "question_answers_count": 5,
-    "question_answers_rate": 1
+    "question_answers_rate": 1,
+    "correct_alternative_answers_rate": 1.3
 }
